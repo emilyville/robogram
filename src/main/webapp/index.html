@@ -40,7 +40,7 @@
           </div>
           <hr>
           <div class="row">
-            <form class="form-horizontal">
+            <form action="services/websend" method="post" class="form-horizontal" id="robotmessage">
               <fieldset>
                 <!-- Text input-->
                 <div class="control-group">
@@ -61,7 +61,7 @@
                 <!-- Button -->
                 <div class="control-group">
                   <div class="controls">
-                    <button id="singlebutton" name="singlebutton" class="btn btn-primary btn-large">send it</button>
+                    <button id="singlebutton" type="submit" value="submit" class="btn btn-primary btn-large">send it</button>
                   </div>
                 </div>
               </fieldset>
