@@ -5,7 +5,7 @@
  * redistribution of this file, and for a DISCLAIMER OF ALL 
  * WARRANTIES.
  */
-package com.example;
+package robogram;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
