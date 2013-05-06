@@ -12,6 +12,12 @@
     <dependencies>
     
     	<dependency>
+    		<groupId>com.twilio.sdk</groupId>
+    		<artifactId>twilio-java-sdk</artifactId>
+    		<version>3.3.15</version>
+    		<scope>compile</scope>
+    	</dependency>
+    	<dependency>
     		<groupId>org.mobicents.external.freetts</groupId>
     		<artifactId>freetts</artifactId>
     		<version>1.0</version>

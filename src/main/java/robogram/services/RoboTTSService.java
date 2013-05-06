@@ -16,9 +16,9 @@ import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 import com.sun.speech.freetts.audio.AudioPlayer;
 
-@Path("/hellovoice")
+@Path("/tts")
 @Produces({ "audio/x-wav" })
-public class HelloVoiceService {
+public class RoboTTSService {
 
 	@GET
 	public StreamingOutput getAudio(final @QueryParam("text") String text) {
@@ -33,7 +33,7 @@ public class HelloVoiceService {
 				if (helloVoice == null) {
 					System.exit(1);
 				}
-				helloVoice.setPitch(50);
+				//helloVoice.setPitch(50);
 				System.out.println("Creating audio player");
 				AudioPlayer player = new OutputStreamAudioPlayer(output);
 				helloVoice.setAudioPlayer(player);
