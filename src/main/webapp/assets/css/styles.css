@@ -4,7 +4,7 @@
  body {
   background: url(../img/stripes.png) repeat-x;
  }
- .hero-unit {
+ .container {
   background-color: #ffffff;
   margin-top: 30px;
  }
