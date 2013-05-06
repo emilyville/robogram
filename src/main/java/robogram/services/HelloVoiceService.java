@@ -17,7 +17,7 @@ import com.sun.speech.freetts.VoiceManager;
 import com.sun.speech.freetts.audio.AudioPlayer;
 
 @Path("/hellovoice")
-@Produces({"audio/x-wav"})
+@Produces({ "audio/x-wav" })
 public class HelloVoiceService {
 
 	@GET
@@ -56,8 +56,6 @@ public class HelloVoiceService {
 				helloVoice.deallocate();
 				player.close();
 			}
-
 		};
 	}
-
 }
