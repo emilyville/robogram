@@ -1,14 +1,14 @@
-# JAX-RS Template Application 
+ROBOGRAM!
+====================
 
-This is a template for a lightweight RESTful API using JAX-RS. The sample code is a call for getting the current time.
-    
-## Running the application locally
+Robogram: nothing says love like a message from a robot.
+---------------------
 
-First build with:
+soon to be live at robogram.something
 
-    $mvn clean install
 
-Then run it with:
-
-    $ java -cp target/classes:target/dependency/* com.example.Main
-
+---------------------
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US
+(http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png "Creative Commons License") 
+This work is licensed under a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US
