@@ -5,17 +5,15 @@
   background: url(../img/stripes.png) repeat-x;
  }
  .container {
-  background-color: #ffffff;
-  margin-top: 30px;
+  margin-top: 50px;
+ }
+ #feature-image {
+  max-width:170px;
+  margin-top: -20px; 
  }
  input, textarea, .uneditable-input {
   width: 90%;
  }
-
- .hero-unit {
-  background-color: #ffffff;
- }
-
  #result {
   display: inline;
   float: left;
@@ -32,4 +30,7 @@
 }
 footer p {
   text-align: center;
+}
+.page-header h1 small {
+  line-height: 1.4em;
 }
