@@ -7,10 +7,46 @@
  .container {
   margin-top: 50px;
  }
+  @media (max-width: 767px) {
+    .container {
+      margin-top: 25px;
+    }
+  }
  #feature-image {
   margin-top: -10px; 
- }
- input, textarea, .uneditable-input {
+}
+ @media (max-width: 767px) {
+   #feature-image {
+    display: none;
+      }
+    h1 {
+      font-size: 25px;
+    }
+    .page-header {
+      border-bottom: none;
+    }
+    h1 small {
+      font-size: 17px;
+    }
+    form {
+      clear: both;
+      display: block;
+      margin: 40px 0 0;
+    }
+  }
+ @media (max-width: 767px) {
+ #feature-mobile {
+  max-width: 60px;
+  margin: -5px 10px 10px 0;
+  float: left;
+    }
+  } 
+ @media (min-width: 768px) {
+ #feature-mobile {
+  display: none;
+    }
+  } 
+  input, textarea, .uneditable-input {
   width: 90%;
  }
  #result {
