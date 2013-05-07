@@ -8,3 +8,10 @@
   background-color: #ffffff;
   margin-top: 30px;
  }
+ input, textarea, .uneditable-input {
+  width: 100%;
+ }
+
+ .hero-unit {
+  background-color: #ffffff;
+ }

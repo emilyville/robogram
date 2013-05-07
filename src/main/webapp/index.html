@@ -29,14 +29,14 @@
 
     <div class="container">
       <div class="row">
-        <div class="span6 offset3">
+        <div class="span6 offset3 hero-unit">
           <div class="row">
             <div class="span2">
             <img src="assets/img/mailbot.png"> 
             </div>
             <div class="span4">
               <h1>Robogram</h1> 
-              <p>Nothing says you care like a message from a robot.</p>
+              <p>Say it with robots.</p>
             </div>
           </div>
           <hr>
@@ -45,23 +45,19 @@
               <fieldset>
                 <!-- Text input-->
                 <div class="control-group">
-                  <label class="control-label">phone number</label>
-                  <div class="controls">
-                    <input id="textinput" name="number" type="text" placeholder="their phone number" class="input-xlarge">
-                  </div>
+                  <label>their phone number:</label>
+                  <input id="textinput" name="number" type="text" placeholder="their phone number" class="input-xlarge">
                 </div>
 
                 <!-- Textarea -->
                 <div class="control-group">
-                  <label class="control-label">your message</label>
-                  <div class="controls">                     
-                    <textarea id="textarea" name="message">Type your message here and we will send it to our robots.</textarea>
-                  </div>
+                  <label>and your message:</label>
+                  <textarea id="textarea" maxlength="120" name="message">Type your message here and we will send it to our robots.</textarea>
                 </div>
 
                 <!-- Button -->
                 <div class="control-group">
-                  <div class="controls">
+                  <div class="controls pull-right">
                     <button id="singlebutton" type="submit" value="submit" class="btn btn-primary btn-large">send it</button>
                   </div>
                 </div>
