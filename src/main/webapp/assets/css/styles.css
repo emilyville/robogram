@@ -9,9 +9,27 @@
   margin-top: 30px;
  }
  input, textarea, .uneditable-input {
-  width: 100%;
+  width: 90%;
  }
 
  .hero-unit {
   background-color: #ffffff;
  }
+
+ #result {
+  display: inline;
+  float: left;
+  margin: 5px 25px;
+/*  border-right: thin solid #FE4365;
+*/  
+ }
+.page-header {
+  margin: 0px 0 10px;
+}
+.page-header p {
+  margin: 10px 0 5px;
+  font-size: 15px;
+}
+footer p {
+  text-align: center;
+}

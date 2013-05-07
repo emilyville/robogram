@@ -42,33 +42,33 @@
 
             <!-- all the content -->
             <div class="span6">
-              <h1>Robogram</h1> 
-              <p>Say it with robots.</p>
-              <hr>
+              <div class="page-header">
+                <h1>Robogram <small>Say it with robots</small></h1>
+              </div>
 
               <!-- the form -->
               <form method="post" class="form-horizontal" id="robotmessage">
                 <fieldset>
                   <!-- Text input-->
                   <div class="control-group">
-                    <label>their phone number:</label>
-                    <input id="textinput" name="number" type="text" placeholder="their phone number" class="input-xlarge">
+                    <label>Enter their phone number:</label>
+                    <input id="textinput" name="number" type="text" placeholder="415-555-5555" class="input-xlarge">
                   </div>
 
                   <!-- Textarea -->
                   <div class="control-group">
-                    <label>your message</label>
+                    <label>Enter your message:</label>
                     <textarea id="textarea" maxlength="120" placeholder="Type your message here and we will send it to our robots." name="message"></textarea>
                   </div>
 
                   <!-- Button -->
                   <div class="control-group">
                     <div class="pull-left">
-                      <button id="singlebutton" type="submit" value="submit" class="btn btn-primary btn-large">send it</button>
+                      <button id="singlebutton" type="submit" value="submit" class="btn btn-primary btn-large">send robogram &raquo;</button>
+                    </div>
+                    <div id="result">
                     </div>
                   </div>
-              	<div id="result">
-                </div>
                 </fieldset>
               </form>
               <!-- end form -->
@@ -82,9 +82,15 @@
     </div>
     <footer>
       <hr>
-      <p>Robograms is licensed under Creative Commons by Emily Wright and Jeremy Moore</p>
+      <div class="span2">
+      </div>
+      <div class="span8">
+        <p>Robograms is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons</a> &#124; <a href="https://github.com/emilyville/robogram" target="_blank"> View it on github</a>
+        </p>
+      </div>
+      <div class="span2">
+      </div>
     </footer>
-
   </div> 
   <!-- /container -->
 
