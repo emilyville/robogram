@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+<!--     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet"> -->
     <link href="assets/css/styles.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -26,22 +25,21 @@
   </head>
 
   <body>
-
+	
     <div class="container">
       <div class="row">
-        <div class="span6 offset3 hero-unit">
+        <div class="span10 offset1 hero-unit">
           <div class="row">
             <div class="span2">
-            <img src="assets/img/mailbot.png"> 
+              <img src="assets/img/mailbot.png"> 
             </div>
-            <div class="span4">
+            <div class="span8">
               <h1>Robogram</h1> 
               <p>Say it with robots.</p>
             </div>
-          </div>
           <hr>
-          <div class="row">
-            <form action="services/websend" method="post" class="form-horizontal" id="robotmessage">
+          <div class="span4">
+            <form method="post" class="form-horizontal" id="robotmessage">
               <fieldset>
                 <!-- Text input-->
                 <div class="control-group">
@@ -51,8 +49,8 @@
 
                 <!-- Textarea -->
                 <div class="control-group">
-                  <label>and your message:</label>
-                  <textarea id="textarea" maxlength="120" name="message">Type your message here and we will send it to our robots.</textarea>
+                  <label>your message</label>
+                  <textarea id="textarea" maxlength="120" placeholder="Type your message here and we will send it to our robots." name="message"></textarea>
                 </div>
 
                 <!-- Button -->
@@ -61,8 +59,11 @@
                     <button id="singlebutton" type="submit" value="submit" class="btn btn-primary btn-large">send it</button>
                   </div>
                 </div>
+            	<div id="result"></div>
               </fieldset>
             </form>
+            </div>
+            <div class="span1">
             </div>
           </div>
         </div>
@@ -79,19 +80,53 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-scrollspy.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
-    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<!--     <script src="assets/js/bootstrap-transition.js"></script> -->
+<!--     <script src="assets/js/bootstrap-alert.js"></script> -->
+<!--     <script src="assets/js/bootstrap-modal.js"></script> -->
+<!--     <script src="assets/js/bootstrap-dropdown.js"></script> -->
+<!--     <script src="assets/js/bootstrap-scrollspy.js"></script> -->
+<!--     <script src="assets/js/bootstrap-tab.js"></script> -->
+<!--     <script src="assets/js/bootstrap-tooltip.js"></script> -->
+<!--     <script src="assets/js/bootstrap-popover.js"></script> -->
+<!--     <script src="assets/js/bootstrap-button.js"></script> -->
+<!--     <script src="assets/js/bootstrap-collapse.js"></script> -->
+<!--     <script src="assets/js/bootstrap-carousel.js"></script> -->
+<!--     <script src="assets/js/bootstrap-typeahead.js"></script> -->
+	
+    <script type="text/javascript">
+        var request;
+        $("#robotmessage").submit(function(event) {
+            if(request) {
+                request.abort();
+            }
+            var $form = $(this);
+            var serialized = $form.serialize();
+            var $inputs = $form.find("number, message");
+            $inputs.prop("disabled", true);
+            var request = $.ajax({
+                url: 'http://www.robogram.me/services/websend',
+                type: 'post',
+                data: serialized
+            });
 
+            request.done(function(response, textStatus, jqXHR) {
+                // success
+                $("#textinput").val("");
+                $("#textarea").val("");
+                $("#result").html("<span class=\"success\">Success!</span>");
+            });
+
+            request.fail(function(jqXHR, textStatus, errorThrown) {
+                // error
+                $("#result").html("<span class=\"error\">Uh oh!</span>");
+            });
+
+            request.always(function () {
+                $inputs.prop("disabled", false);
+            });
+            event.preventDefault();
+        });
+    </script>
   </body>
 </html>
