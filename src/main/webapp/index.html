@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Robogram</title>
+    <title>ROBOGRAM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -28,54 +28,65 @@
 	
     <div class="container">
       <div class="row">
-        <div class="span10 offset1 hero-unit">
+        <!-- two columns space on left..silly bootstrap. TODO: make center column for content-->
+        <div class="span2">
+        </div>
+
+        <!-- two columns space on left, silly bootstrap -->
+        <div class="span8 hero-unit">
           <div class="row">
+            <!-- robot image, two columns -->
             <div class="span2">
               <img src="assets/img/mailbot.png"> 
             </div>
-            <div class="span8">
+
+            <!-- all the content -->
+            <div class="span6">
               <h1>Robogram</h1> 
               <p>Say it with robots.</p>
-            </div>
-          <hr>
-          <div class="span4">
-            <form method="post" class="form-horizontal" id="robotmessage">
-              <fieldset>
-                <!-- Text input-->
-                <div class="control-group">
-                  <label>their phone number:</label>
-                  <input id="textinput" name="number" type="text" placeholder="their phone number" class="input-xlarge">
-                </div>
+              <hr>
 
-                <!-- Textarea -->
-                <div class="control-group">
-                  <label>your message</label>
-                  <textarea id="textarea" maxlength="120" placeholder="Type your message here and we will send it to our robots." name="message"></textarea>
-                </div>
-
-                <!-- Button -->
-                <div class="control-group">
-                  <div class="controls pull-right">
-                    <button id="singlebutton" type="submit" value="submit" class="btn btn-primary btn-large">send it</button>
+              <!-- the form -->
+              <form method="post" class="form-horizontal" id="robotmessage">
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="control-group">
+                    <label>their phone number:</label>
+                    <input id="textinput" name="number" type="text" placeholder="their phone number" class="input-xlarge">
                   </div>
+
+                  <!-- Textarea -->
+                  <div class="control-group">
+                    <label>your message</label>
+                    <textarea id="textarea" maxlength="120" placeholder="Type your message here and we will send it to our robots." name="message"></textarea>
+                  </div>
+
+                  <!-- Button -->
+                  <div class="control-group">
+                    <div class="pull-left">
+                      <button id="singlebutton" type="submit" value="submit" class="btn btn-primary btn-large">send it</button>
+                    </div>
+                  </div>
+              	<div id="result">
                 </div>
-            	<div id="result"></div>
-              </fieldset>
-            </form>
+                </fieldset>
+              </form>
+              <!-- end form -->
+
             </div>
-            <div class="span1">
+            <!-- end all the content -->
+            <div class="span2">
             </div>
           </div>
         </div>
-
-
+    </div>
+    <footer>
       <hr>
+      <p>Robograms is licensed under Creative Commons by Emily Wright and Jeremy Moore</p>
+    </footer>
 
-      <footer>
-        <p>&copy; emilyville 2013</p>
-      </footer>
-
-    </div> <!-- /container -->
+  </div> 
+  <!-- /container -->
 
     <!-- Le javascript
     ================================================== -->
