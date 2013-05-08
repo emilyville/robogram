@@ -42,7 +42,6 @@ public class RoboCallService {
 		TwiMLResponse response = new TwiMLResponse();
 		UriBuilder uriBuilder = UriBuilder
 				.fromPath("http://www.robogram.me/services/tts");
-		message += ". Thank you. To send your own message visit w w w dot row bo gram dot m e";
 		uriBuilder.queryParam("text", message);
 		Play silence = new Play("http://www.robogram.me/assets/audio/silence.wav");
 		Play play = new Play(uriBuilder.build().toString());
