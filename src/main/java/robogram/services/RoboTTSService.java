@@ -33,7 +33,7 @@ public class RoboTTSService {
 				if (helloVoice == null) {
 					System.exit(1);
 				}
-				//helloVoice.setPitch(50);
+				helloVoice.setRate(120);
 				System.out.println("Creating audio player");
 				AudioPlayer player = new OutputStreamAudioPlayer(output);
 				helloVoice.setAudioPlayer(player);
