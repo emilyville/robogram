@@ -1,10 +1,13 @@
 ROBOGRAM!
 ====================
 
-Robogram: nothing says love like a message from a robot.
+Robogram: say it with robots
+
+enter a phone number and a message, and we'll have our robots call the number and read it over the phone. 
+
 ---------------------
 
-soon to be live at robogram.something
+in the wild at robogram.me
 
 
 ---------------------

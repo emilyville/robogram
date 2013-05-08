@@ -2,15 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Robogram</title>
+    <title>ROBOGRAM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-<!--     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet"> -->
     <link href="assets/css/styles.css" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="assets/js/html5shiv.js"></script>
@@ -28,57 +29,72 @@
 	
     <div class="container">
       <div class="row">
-        <div class="span6 offset3">
+        <!-- two columns space on left..silly bootstrap. TODO: make center column for content-->
+        <div class="span2">
+        </div>
+
+        <!-- two columns space on left, silly bootstrap -->
+        <div class="span8">
           <div class="row">
+            <!-- robot image, two columns -->
             <div class="span2">
-            <img src="assets/img/mailbot.png"> 
+              <img src="assets/img/mailbot.png" id="feature-image" class="tilt"> 
             </div>
-            <div class="span4">
-              <h1>Robogram</h1> 
-              <p>Nothing says you care like a message from a robot.</p>
+
+            <!-- all the content -->
+            <div class="span6">
+              <div class="page-header">
+                <img src="assets/img/mailbot.png" id="feature-mobile"> 
+                <h1>Robogram <small>Say it with robots</small></h1>
+              </div>
+
+              <!-- the form -->
+              <form method="post" class="form-horizontal" id="robotmessage">
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="control-group">
+                    <label>Enter their phone number:</label>
+                    <input id="textinput" name="number" type="text" placeholder="415-555-5555" class="input-xlarge">
+                  </div>
+
+                  <!-- Textarea -->
+                  <div class="control-group">
+                    <label>Enter your message:</label>
+                    <textarea id="textarea" maxlength="120" placeholder="Type your message here and we will send it to our robots." name="message"></textarea>
+                  </div>
+
+                  <!-- Button -->
+                  <div class="control-group">
+                    <div class="pull-left">
+                      <button id="singlebutton" type="submit" value="submit" class="btn btn-primary btn-large">send robogram &raquo;</button>
+                    </div>
+                    <div id="result">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+              <!-- end form -->
+
             </div>
-          </div>
-          <hr>
-          <div class="row">
-            <form method="post" class="form-horizontal" id="robotmessage">
-              <fieldset>
-                <!-- Text input-->
-                <div class="control-group">
-                  <label class="control-label">phone number</label>
-                  <div class="controls">
-                    <input id="textinput" name="number" type="text" placeholder="their phone number" class="input-xlarge">
-                  </div>
-                </div>
-
-                <!-- Textarea -->
-                <div class="control-group">
-                  <label class="control-label">your message</label>
-                  <div class="controls">
-                    <textarea id="textarea" placeholder="Type your message here and we will send it to our robots." name="message"></textarea>
-                  </div>
-                </div>
-
-                <!-- Button -->
-                <div class="control-group">
-                  <div class="controls">
-                    <button id="singlebutton" type="submit" value="submit" class="btn btn-primary btn-large">send it</button>
-                  </div>
-                </div>
-            	<div id="result"></div>
-              </fieldset>
-            </form>
+            <!-- end all the content -->
+            <div class="span2">
             </div>
           </div>
         </div>
-
-
+    </div>
+    <footer>
       <hr>
-
-      <footer>
-        <p>&copy; emilyville 2013</p>
-      </footer>
-
-    </div> <!-- /container -->
+      <div class="span2">
+      </div>
+      <div class="span8">
+        <p>Robogram.me is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons</a> &#124; <a href="https://github.com/emilyville/robogram" target="_blank"> View it on github</a>
+        </p>
+      </div>
+      <div class="span2">
+      </div>
+    </footer>
+  </div> 
+  <!-- /container -->
 
     <!-- Le javascript
     ================================================== -->
@@ -130,6 +146,19 @@
             });
             event.preventDefault();
         });
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-40715366-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
     </script>
   </body>
 </html>
