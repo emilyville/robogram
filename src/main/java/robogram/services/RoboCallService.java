@@ -22,7 +22,7 @@ public class RoboCallService {
 		TwiMLResponse response = new TwiMLResponse();
 		String message = "Hello, this is the robot.  I can't come to the phone " +
 				"right now because I am busy sending row bo grams.  If you would " +
-				"like to send a row bo gram, please visit w w w dot row bo gram " +
+				"like to send ah row bo gram, please visit w w w dot row bo gram " +
 				"dot m e";
 
 		UriBuilder uriBuilder = UriBuilder
