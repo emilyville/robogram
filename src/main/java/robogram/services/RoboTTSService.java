@@ -2,6 +2,7 @@ package robogram.services;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.logging.Logger;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -19,13 +20,16 @@ import com.sun.speech.freetts.audio.AudioPlayer;
 @Path("/tts")
 @Produces({ "audio/x-wav" })
 public class RoboTTSService {
-	
+	private static final Logger logger = Logger.getLogger(RoboTTSService.class
+			.getName());
+
 	@GET
 	public StreamingOutput getAudio(final @QueryParam("text") String text) {
 		return new StreamingOutput() {
 
 			public void write(OutputStream output) throws IOException,
 					WebApplicationException {
+				logger.info("Performing tts on message: " + text);
 				VoiceManager voiceManager = VoiceManager.getInstance();
 				String voiceName = "kevin16";
 				Voice helloVoice = voiceManager.getVoice(voiceName);
