@@ -2,6 +2,7 @@ package robogram.services;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.URLDecoder;
 import java.util.logging.Logger;
 
 import javax.ws.rs.GET;
@@ -30,6 +31,8 @@ public class RoboTTSService {
 			public void write(OutputStream output) throws IOException,
 					WebApplicationException {
 				logger.info("Performing tts on message: " + text);
+				String message = URLDecoder.decode(text, "UTF-8");
+				logger.info("Decoded message: " + message);
 				VoiceManager voiceManager = VoiceManager.getInstance();
 				String voiceName = "kevin16";
 				Voice helloVoice = voiceManager.getVoice(voiceName);
@@ -51,7 +54,7 @@ public class RoboTTSService {
 				 * Synthesize speech.
 				 */
 				System.out.println("Speaking");
-				boolean success = helloVoice.speak(text);
+				boolean success = helloVoice.speak(message);
 				System.out.println("speak returned " + success);
 				/*
 				 * Clean up and leave.

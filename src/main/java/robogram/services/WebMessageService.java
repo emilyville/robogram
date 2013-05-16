@@ -1,5 +1,7 @@
 package robogram.services;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -41,7 +43,13 @@ public class WebMessageService {
 		callParams.put("Method", "GET");
 		UriBuilder uriBuilder = UriBuilder
 				.fromPath("http://{hostname}/services/robocall");
-		uriBuilder.queryParam("message", message);
+		try {
+			uriBuilder.queryParam("message", URLEncoder.encode(message, "UTF-8"));
+		} catch (IllegalArgumentException e1) {
+			return Response.serverError().build();
+		} catch (UnsupportedEncodingException e1) {
+			return Response.serverError().build();
+		}
 		Map<String, String> urlParams = new HashMap<String, String>();
 		urlParams.put("hostname", HOSTNAME);
 		callParams.put("Url", uriBuilder.buildFromMap(urlParams).toString());
